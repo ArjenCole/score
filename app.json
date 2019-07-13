@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/score/score"
+    "pages/score/score",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

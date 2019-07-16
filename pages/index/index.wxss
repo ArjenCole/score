@@ -1,21 +1,76 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.userinfo, .uploader, .tunnel {
+    margin-top: 40rpx;
+    height: 140rpx;
+    width: 100%;
+    background: #FFF;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 300ms ease;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    flex-grow: 0;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+    font-size: 32rpx;
+    color: #007AFF;
+    background-color: white; 
 }
 
-.usermotto {
-  margin-top: 200px;
+.userinfo-nickname::after {
+  border: none;
+}
+
+.bottom50 {
+  position: fixed;
+  bottom: 20px;
+}
+.logIn{
+  flex-grow: 2;
+}
+.logInButton {
+	background: #79899b;
+	color: #fff;
+	text-align: center;
+	font-size: 15px;
+}
+
+
+.footer_version {
+	font-size: 12px;
+	color: #b6b6b66e;
+}
+
+.buttonLogIn{
+  display: block;
+  width: 90%;
+  height: 80rpx;
+  padding: 0;
+  line-height: 80rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -45%; 
+  background: #79899b;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 5px;
 }

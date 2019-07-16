@@ -17,12 +17,14 @@ Page({
   },
 
   bindAgreeChange: function (e) {
-    console.log(e)
-    console.log(!!e.detail.value.length)
     this.setData({
       isAgree: !!e.detail.value.length
     });
     console.log(this.data.isAgree)
 
+  },
+
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
   }
 });

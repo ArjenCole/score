@@ -1,72 +1,75 @@
-<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-    <view class="page__hd">
-        <!--view class="page__title">Input</view-->
-        <!--view class="page__desc">表单输入</view-->
-    </view>
-    <view class="page__bd">
-        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">同意《相关条款》方可继续下一步操作</view>
-        <!--view class="weui-cells__title">表单</view-->
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input weui-cell_vcode">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">企业</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="企业名称" />
-                </view>
-                <view class="weui-cell__ft">
-                    <view class="weui-vcode-btn">搜索</view>
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input weui-cell_vcode">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">人员</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="人员姓名" />
-                </view>
-                <view class="weui-cell__ft">
-                    <view class="weui-vcode-btn">搜索</view>
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input weui-cell_vcode">
-                <view class="weui-cell__hd">
-                    <view class="weui-label">评分</view>
-                </view>
-                <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="评分" />
-                </view>
-            </view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+        <view class="page__hd">
+            <!--view class="page__title">Input</view-->
+            <!--view class="page__desc">表单输入</view-->
         </view>
-        <view class="weui-cells__tips">详细评价的内容质量会决定你的评分权重</view>
-
-
-        <!--view class="weui-cells__title">评价</view-->
-
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="详细评价" style="height: 3.3em" />
-                    <view class="weui-textarea-counter">0/200</view>
-                </view>
-            </view>
-        </view>
-
-
-        <checkbox-group bindchange="bindAgreeChange">
-            <label class="weui-agree" for="weuiAgree">
-                <view class="weui-agree__text">
-                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
-                    <view class="weui-agree__checkbox-icon">
-                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+        <view class="page__bd">
+            <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">同意《相关条款》方可继续下一步操作</view>
+            <!--view class="weui-cells__title">表单</view-->
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">企业</view>
                     </view>
-                    阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+                    <view class="weui-cell__bd">
+                        <input name="Firm" class="weui-input" placeholder="企业名称" />
+                    </view>
+                    <view class="weui-cell__ft">
+                        <view class="weui-vcode-btn">搜索</view>
+                    </view>
                 </view>
-            </label>
-        </checkbox-group>
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">人员</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="Person" class="weui-input" placeholder="人员姓名" />
+                    </view>
+                    <view class="weui-cell__ft">
+                        <view class="weui-vcode-btn">搜索</view>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">评分</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input name="Score" class="weui-input" placeholder="评分" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells__tips">详细评价的内容质量会决定你的评分权重</view>
 
-        <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+
+            <!--view class="weui-cells__title">评价</view-->
+
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <textarea name="Remark" class="weui-textarea" placeholder="详细评价" style="height: 3.3em" />
+                        <view class="weui-textarea-counter">0/200</view>
+                    </view>
+                </view>
+            </view>
+
+
+            <checkbox-group bindchange="bindAgreeChange">
+                <label class="weui-agree" for="weuiAgree">
+                    <view class="weui-agree__text">
+                        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                        <view class="weui-agree__checkbox-icon">
+                            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                        </view>
+                        阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+                    </view>
+                </label>
+            </checkbox-group>
+
+            <view class="weui-btn-area">
+                <button class="weui-btn" formType="submit" type="primary" bindtap="showTopTips">确定</button>
+            </view>
         </view>
     </view>
-</view>
+</form>

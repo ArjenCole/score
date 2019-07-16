@@ -4,12 +4,12 @@
     <view class="weui-cell weui-cell_access">
         <image
             class="userinfo-avatar"
-            src="{{logged ? userInfo.avatarUrl : '../res/user-unlogin.png'}}"
+            src="{{hasUserInfo ? userInfo.avatarUrl : '../res/user-unlogin.png'}}"
             background-size="cover"
             bindtap='bindSwitch'
         ></image>
         <view class='logIn'>
-            <button class="logInButton" bindtap="bindNewItem"> 点击登录 </button>
+            <button class="logInButton" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击登录 </button>
         </view>
     </view>
 </view>

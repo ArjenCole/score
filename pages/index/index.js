@@ -1,12 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const WXBizDataCrypt = require('../../utils/WXBizDataCrypt.js')
 
 Page({
   data: {
     motto: '欢迎来评分',
     userInfo: {},
+    encryptedData: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -52,8 +52,10 @@ Page({
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
+    app.globalData.encryptedData = e.detail.encryptedData
     this.setData({
       userInfo: e.detail.userInfo,
+      encryptedData: e.detail.encryptedData,
       hasUserInfo: true
     })
   }
